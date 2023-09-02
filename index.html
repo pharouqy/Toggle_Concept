@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #222;
+            font-family: sans-serif;
+            color: #fff;
+            user-select: none;
+        }
+        button {
+            margin: 0 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #333;
+            cursor: pointer;
+            transition: 0.2s;
+            outline: none;
+            user-select: none;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            text-decoration: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        span {
+            margin: 0 10px;
+            padding: 10px;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #333;
+            cursor: pointer;
+            transition: 0.2s;
+            outline: none;
+        }
+    </style>
+  </head>
+  <body>
+    <button type="button" class="active">Toogle</button>
+    <span>0</span>
+    <script>
+      const button = document.querySelector("button");
+      let span = document.querySelector("span");
+      button.addEventListener("click", () => {
+        if (button.classList.contains("active")) {
+          span.textContent++;
+          button.classList.remove("active");
+        } else {
+          span.textContent--;
+          button.classList.add("active");
+        };
+      });
+    </script>
+  </body>
+</html>
